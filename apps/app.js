@@ -28,8 +28,11 @@ function getRequest(searchTerm){
 
 function showResults(results){
     var html="";
+   // 'https://www.youtube.com/watch?v='
     $.each(results, function(index,value){
+      html += '<a href="https://www.youtube.com/watch?v='+value.id.videoId+'" target="_blank">';
     	html += '<img src='+value.snippet.thumbnails.medium.url+' />';
+      html+='</a>';
         $('.search-results').html(html);
     });
 };
